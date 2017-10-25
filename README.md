@@ -1,5 +1,7 @@
-#####composer install
+Get going
+------------
+```composer install```
 
-#####vendor/bin/phpunit -c phpunit.xml.dist
+```vendor/bin/phpunit -c phpunit.xml.dist```
 
-#####vendor/bin/humbug  
+```vendor/bin/humbug  ```
