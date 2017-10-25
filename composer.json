@@ -1,0 +1,11 @@
+{
+  "autoload": {
+    "psr-4": {
+      "Tools\\":"tools"
+    }
+  },
+  "require": {
+    "phpunit/phpunit": "^4.5",
+    "humbug/humbug": "~1.0@dev"
+  }
+}

@@ -1,0 +1,191 @@
+{
+    "summary": {
+        "total": 13,
+        "kills": 13,
+        "escapes": 0,
+        "errors": 0,
+        "timeouts": 0,
+        "notests": 0,
+        "covered_score": 100,
+        "combined_score": 100,
+        "mutation_coverage": 100
+    },
+    "uncovered": [],
+    "escaped": [],
+    "errored": [],
+    "timeouts": [],
+    "killed": [
+        {
+            "file": "tools\/Calculator.php",
+            "mutator": "\\Humbug\\Mutator\\Arithmetic\\Addition",
+            "class": "\\Tools\\Calculator",
+            "method": "add",
+            "line": 10,
+            "diff": "--- Original\n+++ New\n@@ @@\n     {\n-        $number = $number1 + $number2;\n+        $number = $number1 - $number2;\n         return $number;\n     }\n \n     public function subtract($number1, $number2)\n     {\n         $number = $number1 - $number2;",
+            "tests": [
+                "CalculactorTest::testAdd",
+                "CalculactorTest::testSubtract"
+            ],
+            "stderr": "",
+            "stdout": "TAP version 13"
+        },
+        {
+            "file": "tools\/Calculator.php",
+            "mutator": "\\Humbug\\Mutator\\Arithmetic\\Subtraction",
+            "class": "\\Tools\\Calculator",
+            "method": "subtract",
+            "line": 16,
+            "diff": "--- Original\n+++ New\n@@ @@\n     {\n-        $number = $number1 - $number2;\n+        $number = $number1 + $number2;\n         return $number;\n     }\n \n     public function divide($number1, $number2)\n     {\n         if ($number2 === 0) {",
+            "tests": [
+                "CalculactorTest::testSubtract"
+            ],
+            "stderr": "",
+            "stdout": "TAP version 13"
+        },
+        {
+            "file": "tools\/Calculator.php",
+            "mutator": "\\Humbug\\Mutator\\ConditionalNegation\\Identical",
+            "class": "\\Tools\\Calculator",
+            "method": "divide",
+            "line": 22,
+            "diff": "--- Original\n+++ New\n@@ @@\n     {\n-        if ($number2 === 0) {\n+        if ($number2 !== 0) {\n             return false;\n         }\n         $number = $number1 \/ $number2;\n         return $number;\n     }\n ",
+            "tests": [
+                "CalculactorTest::testDivide",
+                "CalculactorTest::testDivideByZero"
+            ],
+            "stderr": "",
+            "stdout": "TAP version 13"
+        },
+        {
+            "file": "tools\/Calculator.php",
+            "mutator": "\\Humbug\\Mutator\\Number\\IntegerValue",
+            "class": "\\Tools\\Calculator",
+            "method": "divide",
+            "line": 22,
+            "diff": "--- Original\n+++ New\n@@ @@\n     {\n-        if ($number2 === 0) {\n+        if ($number2 === 1) {\n             return false;\n         }\n         $number = $number1 \/ $number2;\n         return $number;\n     }\n ",
+            "tests": [
+                "CalculactorTest::testDivide",
+                "CalculactorTest::testDivideByZero"
+            ],
+            "stderr": "",
+            "stdout": "TAP version 13"
+        },
+        {
+            "file": "tools\/Calculator.php",
+            "mutator": "\\Humbug\\Mutator\\Boolean\\FalseValue",
+            "class": "\\Tools\\Calculator",
+            "method": "divide",
+            "line": 23,
+            "diff": "--- Original\n+++ New\n@@ @@\n         if ($number2 === 0) {\n-            return false;\n+            return true;\n         }\n         $number = $number1 \/ $number2;\n         return $number;\n     }\n \n     public function doSomeMath($number1, $number2, $number3)",
+            "tests": [
+                "CalculactorTest::testDivideByZero"
+            ],
+            "stderr": "",
+            "stdout": "TAP version 13"
+        },
+        {
+            "file": "tools\/Calculator.php",
+            "mutator": "\\Humbug\\Mutator\\Arithmetic\\Division",
+            "class": "\\Tools\\Calculator",
+            "method": "divide",
+            "line": 25,
+            "diff": "--- Original\n+++ New\n@@ @@\n         }\n-        $number = $number1 \/ $number2;\n+        $number = $number1 * $number2;\n         return $number;\n     }\n \n     public function doSomeMath($number1, $number2, $number3)\n     {\n         return ($number1 + $number2) \/ $number3;",
+            "tests": [
+                "CalculactorTest::testDivide"
+            ],
+            "stderr": "",
+            "stdout": "TAP version 13"
+        },
+        {
+            "file": "tools\/Calculator.php",
+            "mutator": "\\Humbug\\Mutator\\ReturnValue\\BracketedStatement",
+            "class": "\\Tools\\Calculator",
+            "method": "doSomeMath",
+            "line": 31,
+            "diff": "--- Original\n+++ New\n@@ @@\n     {\n-        return ($number1 + $number2) \/ $number3;\n+        ($number1 + $number2) \/ $number3; return null;\n     }\n \n     public function numberGreaterOrEqual($number1, $number2)\n     {\n         return $number1 >= $number2 ? true : false;\n     }",
+            "tests": [
+                "CalculactorTest::testDoMath"
+            ],
+            "stderr": "",
+            "stdout": "TAP version 13"
+        },
+        {
+            "file": "tools\/Calculator.php",
+            "mutator": "\\Humbug\\Mutator\\Arithmetic\\Addition",
+            "class": "\\Tools\\Calculator",
+            "method": "doSomeMath",
+            "line": 31,
+            "diff": "--- Original\n+++ New\n@@ @@\n     {\n-        return ($number1 + $number2) \/ $number3;\n+        return ($number1 - $number2) \/ $number3;\n     }\n \n     public function numberGreaterOrEqual($number1, $number2)\n     {\n         return $number1 >= $number2 ? true : false;\n     }",
+            "tests": [
+                "CalculactorTest::testDoMath"
+            ],
+            "stderr": "",
+            "stdout": "TAP version 13"
+        },
+        {
+            "file": "tools\/Calculator.php",
+            "mutator": "\\Humbug\\Mutator\\Arithmetic\\Division",
+            "class": "\\Tools\\Calculator",
+            "method": "doSomeMath",
+            "line": 31,
+            "diff": "--- Original\n+++ New\n@@ @@\n     {\n-        return ($number1 + $number2) \/ $number3;\n+        return ($number1 + $number2) * $number3;\n     }\n \n     public function numberGreaterOrEqual($number1, $number2)\n     {\n         return $number1 >= $number2 ? true : false;\n     }",
+            "tests": [
+                "CalculactorTest::testDoMath"
+            ],
+            "stderr": "",
+            "stdout": "TAP version 13"
+        },
+        {
+            "file": "tools\/Calculator.php",
+            "mutator": "\\Humbug\\Mutator\\ConditionalBoundary\\GreaterThanOrEqualTo",
+            "class": "\\Tools\\Calculator",
+            "method": "numberGreaterOrEqual",
+            "line": 36,
+            "diff": "--- Original\n+++ New\n@@ @@\n     {\n-        return $number1 >= $number2 ? true : false;\n+        return $number1 > $number2 ? true : false;\n     }\n }\n \n",
+            "tests": [
+                "CalculactorTest::testNumberGreaterOrEqual"
+            ],
+            "stderr": "",
+            "stdout": "TAP version 13"
+        },
+        {
+            "file": "tools\/Calculator.php",
+            "mutator": "\\Humbug\\Mutator\\ConditionalNegation\\GreaterThanOrEqualTo",
+            "class": "\\Tools\\Calculator",
+            "method": "numberGreaterOrEqual",
+            "line": 36,
+            "diff": "--- Original\n+++ New\n@@ @@\n     {\n-        return $number1 >= $number2 ? true : false;\n+        return $number1 < $number2 ? true : false;\n     }\n }\n \n",
+            "tests": [
+                "CalculactorTest::testNumberGreaterOrEqual"
+            ],
+            "stderr": "",
+            "stdout": "TAP version 13"
+        },
+        {
+            "file": "tools\/Calculator.php",
+            "mutator": "\\Humbug\\Mutator\\Boolean\\TrueValue",
+            "class": "\\Tools\\Calculator",
+            "method": "numberGreaterOrEqual",
+            "line": 36,
+            "diff": "--- Original\n+++ New\n@@ @@\n     {\n-        return $number1 >= $number2 ? true : false;\n+        return $number1 >= $number2 ? false : false;\n     }\n }\n \n",
+            "tests": [
+                "CalculactorTest::testNumberGreaterOrEqual"
+            ],
+            "stderr": "",
+            "stdout": "TAP version 13"
+        },
+        {
+            "file": "tools\/Calculator.php",
+            "mutator": "\\Humbug\\Mutator\\Boolean\\FalseValue",
+            "class": "\\Tools\\Calculator",
+            "method": "numberGreaterOrEqual",
+            "line": 36,
+            "diff": "--- Original\n+++ New\n@@ @@\n     {\n-        return $number1 >= $number2 ? true : false;\n+        return $number1 >= $number2 ? true : true;\n     }\n }\n \n",
+            "tests": [
+                "CalculactorTest::testNumberGreaterOrEqual"
+            ],
+            "stderr": "",
+            "stdout": "TAP version 13"
+        }
+    ]
+}
